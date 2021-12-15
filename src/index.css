@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
+
+* {
+    font-family: 'Rubik', sans-serif;
+}
+
 .merry-xmas {
     margin: 0 auto 10px auto;
     width: 400px;
@@ -107,15 +113,23 @@
     border-color: transparent transparent #ffd105 transparent;
     transform: rotate(-35deg);
 }
+
 .ornament {
     position: relative;
-    background: radial-gradient(#ffffff, #ffff99, #ffcc33);
+    background: radial-gradient(
+        rgb(0, 212, 131),
+        rgb(255, 152, 0),
+        rgb(255, 193, 7)
+    );
     width: 32px;
     height: 32px;
     cursor: pointer;
     border-radius: 100%;
     z-index: 1;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .ornament:before {
     position: absolute;
@@ -124,7 +138,7 @@
     height: 20px;
     top: 0px;
     left: 0px;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.4);
     border-radius: 100%;
 }
 .ornament:after {
@@ -134,7 +148,8 @@
     height: 42px;
     top: -20px;
     left: -10px;
-    border: solid 5px #ffcc33;
+    border: solid 5px;
+    border-color: rgba(255, 255, 255, 0.2);
     border-radius: 100%;
 }
 [class^='ornament-container'] {
@@ -307,4 +322,42 @@
     top: 350px;
     left: 250px;
     animation-delay: 3s;
+}
+
+i.bi {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+}
+
+.root {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.timer {
+    text-align: center;
+    font-size: 18px;
+    border-bottom: 5px solid;
+    padding: 15px;
+    border-bottom-left-radius: 20px;
+    text-shadow: 1px 1px 3px #000;
+}
+
+.timer span {
+    font-size: 32px;
+    margin-right: 10px;
+}
+
+.fade-right {
+    transition: all 0.9s ease 0s;
+    transform: translate(120%, 0px);
+    opacity: 0;
+}
+
+.fade-right.active {
+    opacity: 1;
+    transform: translate(0px, 0px);
 }
