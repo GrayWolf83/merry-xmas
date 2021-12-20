@@ -4,6 +4,11 @@
     font-family: 'Rubik', sans-serif;
 }
 
+body {
+    margin: 0;
+    position: relative;
+}
+
 .merry-xmas {
     margin: 0 auto 10px auto;
     width: 400px;
@@ -351,6 +356,17 @@ i.bi {
     margin-right: 10px;
 }
 
+.snow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 6;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
 .fade-right {
     transition: all 0.9s ease 0s;
     transform: translate(120%, 0px);
@@ -360,4 +376,70 @@ i.bi {
 .fade-right.active {
     opacity: 1;
     transform: translate(0px, 0px);
+}
+
+.garland-item {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 6;
+    opacity: 0.9;
+    transition: all 0.4s;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.garland-item.item-0 {
+    top: 85px;
+    left: 225px;
+}
+
+.garland-item.item-1 {
+    top: 115px;
+    left: 205px;
+}
+
+.garland-item.item-2 {
+    top: 145px;
+    left: 175px;
+}
+
+.garland-item.item-3 {
+    top: 165px;
+    left: 140px;
+}
+
+.garland-item.item-4 {
+    top: 185px;
+    left: 255px;
+}
+
+.garland-item.item-5 {
+    top: 215px;
+    left: 215px;
+}
+
+.garland-item.item-6 {
+    top: 245px;
+    left: 170px;
+}
+
+.garland-item.item-7 {
+    top: 275px;
+    left: 110px;
+}
+
+.garland-item.item-8 {
+    top: 265px;
+    left: 270px;
+}
+
+.garland-item.item-9 {
+    top: 305px;
+    left: 230px;
+}
+
+.garland-item.item-10 {
+    top: 325px;
+    left: 170px;
 }
