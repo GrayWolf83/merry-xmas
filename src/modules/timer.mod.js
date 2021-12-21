@@ -9,12 +9,14 @@ import {
 export class TimerModule extends Module {
     #container
     #interval
+    #root
 
-    constructor(el, iconClassName) {
+    constructor(el, iconClassName, root) {
         super(el, iconClassName)
         this.#container = createElement('div', { className: 'timer' })
         this.#container.classList.add('fade-right')
         this.#interval = null
+        this.#root = root
     }
 
     #createTimer() {
@@ -50,26 +52,28 @@ export class TimerModule extends Module {
         )
     }
 
-    get getHTML() {
-        return this.#container
-    }
-
     render() {
         this.#createTimer()
         this.el.addEventListener('click', (e) => {
             this.on = !this.on
-            const color = getColor()
-            e.target.style.background = getRadialGradient(this.on, color)
-            this.#container.style.color = color
             if (this.on) {
-                this.#container.classList.add('active')
-                this.#interval = setInterval(() => {
-                    this.#createTimer()
-                }, 1000)
-            } else {
-                clearInterval(this.#interval)
-                this.#container.classList.remove('active')
+                this.#root.append(this.#container)
             }
+            setTimeout(() => {
+                const color = getColor()
+                e.target.classList.add('active')
+                e.target.style.background = getRadialGradient(this.on, color)
+                this.#container.style.color = color
+                if (this.on) {
+                    this.#container.classList.add('active')
+                    this.#interval = setInterval(() => {
+                        this.#createTimer()
+                    }, 1000)
+                } else {
+                    clearInterval(this.#interval)
+                    this.#container.classList.remove('active')
+                }
+            }, 0)
         })
     }
 }

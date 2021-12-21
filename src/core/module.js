@@ -19,10 +19,6 @@ export class Module {
         this.el.append(this.#icon)
     }
 
-    get getHTML() {
-        throw new Error(`В модуле не определен геттер 'getHTML'`)
-    }
-
     render() {
         throw new Error(`В модуле не определен метод 'render'`)
     }

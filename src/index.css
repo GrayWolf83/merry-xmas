@@ -4,6 +4,11 @@
     font-family: 'Rubik', sans-serif;
 }
 
+body {
+    margin: 0;
+    position: relative;
+}
+
 .merry-xmas {
     margin: 0 auto 10px auto;
     width: 400px;
@@ -157,44 +162,28 @@
     z-index: 7;
 }
 .ornament-container1 {
-    top: 110px;
-    left: 135px;
+    top: 125px;
+    left: 130px;
 }
 .ornament-container2 {
-    top: 110px;
-    left: 240px;
+    top: 210px;
+    left: 250px;
 }
 .ornament-container3 {
-    top: 160px;
-    left: 185px;
-}
-.ornament-container4 {
-    top: 210px;
+    top: 300px;
     left: 100px;
 }
+.ornament-container4 {
+    top: 110px;
+    left: 250px;
+}
 .ornament-container5 {
-    top: 210px;
-    left: 240px;
+    top: 300px;
+    left: 300px;
 }
 .ornament-container6 {
-    top: 260px;
-    left: 285px;
-}
-.ornament-container7 {
-    top: 270px;
-    left: 150px;
-}
-.ornament-container8 {
-    top: 325px;
-    left: 80px;
-}
-.ornament-container9 {
-    top: 335px;
-    left: 210px;
-}
-.ornament-container10 {
-    top: 325px;
-    left: 310px;
+    top: 185px;
+    left: 170px;
 }
 [class^='light'] {
     position: absolute;
@@ -351,6 +340,17 @@ i.bi {
     margin-right: 10px;
 }
 
+.snow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 6;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
 .fade-right {
     transition: all 0.9s ease 0s;
     transform: translate(120%, 0px);
@@ -360,4 +360,98 @@ i.bi {
 .fade-right.active {
     opacity: 1;
     transform: translate(0px, 0px);
+}
+
+.garland-item {
+    width: 7px;
+    height: 10px;
+    border-radius: 30px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: absolute;
+    z-index: 6;
+    opacity: 0.9;
+    transition: all 0.4s;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.garland-item.item-0 {
+    top: 85px;
+    left: 225px;
+}
+
+.garland-item.item-1 {
+    top: 115px;
+    left: 205px;
+}
+
+.garland-item.item-2 {
+    top: 145px;
+    left: 175px;
+}
+
+.garland-item.item-3 {
+    top: 165px;
+    left: 140px;
+}
+
+.garland-item.item-4 {
+    top: 185px;
+    left: 255px;
+}
+
+.garland-item.item-5 {
+    top: 215px;
+    left: 215px;
+}
+
+.garland-item.item-6 {
+    top: 245px;
+    left: 170px;
+}
+
+.garland-item.item-7 {
+    top: 275px;
+    left: 110px;
+}
+
+.garland-item.item-8 {
+    top: 265px;
+    left: 270px;
+}
+
+.garland-item.item-9 {
+    top: 305px;
+    left: 230px;
+}
+
+.garland-item.item-10 {
+    top: 325px;
+    left: 170px;
+}
+
+.fade-left {
+    transition: all 0.9s ease 0s;
+    transform: translate(-120%, 0px);
+    opacity: 0;
+}
+
+.fade-left.active {
+    opacity: 1;
+    transform: translate(0px, 0px);
+}
+
+.gifts {
+    width: 100%;
+    position: absolute;
+    bottom: -5px;
+    display: flex;
+    justify-content: center;
+}
+
+.gifts .gift {
+    position: relative;
+    font-size: 54px;
+    z-index: 10;
+    margin: 0 7px;
 }
