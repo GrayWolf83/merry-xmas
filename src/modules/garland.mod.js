@@ -1,17 +1,13 @@
 import { Module } from '../core/module'
-import { createElement, getColor, getRadialGradient, random } from '../utils'
+import { createElement, getColor, getRadialGradient } from '../utils'
 
 export class GarlandModule extends Module {
     #container
-    #root
-    #intervall
     #garlandItems
 
-    constructor(el, iconClassName, root) {
+    constructor(el, iconClassName) {
         super(el, iconClassName)
         this.#container = document.querySelector('.merry-xmas')
-        this.#root = root
-        this.#intervall = null
         this.#garlandItems = []
     }
 
@@ -44,8 +40,7 @@ export class GarlandModule extends Module {
     render() {
         this.el.addEventListener('click', (e) => {
             this.on = !this.on
-            const color = getColor()
-            e.target.style.background = getRadialGradient(this.on, color)
+            e.target.style.background = getRadialGradient(this.on, getColor())
             if (this.on) {
                 this.#createGarlandItems()
                 this.#addGarland()

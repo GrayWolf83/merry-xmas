@@ -3,13 +3,11 @@ import { createElement, random } from '../utils'
 
 export class SnowModule extends Module {
     #container
-    #root
     #intervall
 
-    constructor(el, iconClassName, root) {
+    constructor(el, iconClassName) {
         super(el, iconClassName)
         this.#container = createElement('div', { className: 'snow' })
-        this.#root = root
         this.#intervall = null
     }
 

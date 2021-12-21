@@ -4,13 +4,10 @@ import { getRadialGradient, createElement, getColor, random } from '../utils'
 
 export class SoundModule extends Module {
     #container
-    #root
 
-    constructor(el, iconClassName, root) {
+    constructor(el, iconClassName) {
         super(el, iconClassName)
         this.#container = createElement('div', { className: 'sound' })
-        this.#container.classList.add('fade-right')
-        this.#root = root
     }
 
     #getSong() {
